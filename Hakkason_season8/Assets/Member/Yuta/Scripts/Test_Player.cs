@@ -41,5 +41,9 @@ public class Test_Player : MonoBehaviour
             Test_GameManger.Item = true;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "Finish")
+        {
+            Debug.Log("ÉNÉäÉA");
+        }
     }
 }

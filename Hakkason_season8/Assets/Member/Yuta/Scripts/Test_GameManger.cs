@@ -14,7 +14,7 @@ public class Test_GameManger : MonoBehaviour
     {
         //スポットライトのコンポーネント取得
         SpotAngle = lightObject.GetComponent<Light>().spotAngle;
-        SpotAngle = 30.0f;  //初期の大きさ
+        SpotAngle = 50.0f;  //初期の大きさ
         time = 0f;
         Item = false;
         GameOver = false;
@@ -39,7 +39,7 @@ public class Test_GameManger : MonoBehaviour
         if (Item)
         {
             //ライトの大きさを初期に戻す
-            SpotAngle = 30.0f;
+            SpotAngle = 50.0f;
             Item = false;
         }
 
