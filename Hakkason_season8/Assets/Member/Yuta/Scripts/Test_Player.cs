@@ -36,9 +36,15 @@ public class Test_Player : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Item")
+        if (collision.gameObject.tag == "Item" && collision.gameObject.name == "Light_Item (+)")
         {
             Test_GameManger.Item = true;
+            Test_GameManger.Spot_light = false;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Item" && collision.gameObject.name == "Light_Item (-)")
+        {
+            Test_GameManger.But_Item = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Finish")
