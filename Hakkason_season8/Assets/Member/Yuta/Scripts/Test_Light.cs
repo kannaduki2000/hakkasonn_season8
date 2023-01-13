@@ -10,7 +10,7 @@ public class Test_Light : MonoBehaviour
     void Start()
     {
         lightStrength = GetComponent<Light>().intensity;
-        lightStrength = 0.2f;
+        lightStrength = 0.5f;
         maxStrength = false;
     }
 

@@ -5,19 +5,19 @@ using UnityEngine;
 public class Test_GameManger : MonoBehaviour
 {
     [SerializeField] GameObject lightObject;
-    private float SpotAngle; //ƒ‰ƒCƒg‚Ì‘å‚«‚³
-    private float time = 0f; //ŠÔŒo‰ß‹L˜^
-    private bool GameOver = false; //ƒQ[ƒ€ƒI[ƒo[ƒtƒ‰ƒO
+    private float SpotAngle; //ãƒ©ã‚¤ãƒˆã®å¤§ãã•
+    private float time = 0f; //æ™‚é–“çµŒéè¨˜éŒ²
+    private bool GameOver = false; //ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ãƒ•ãƒ©ã‚°
 
-    public static bool Item = false; //ƒAƒCƒeƒ€æ“¾ƒtƒ‰ƒO
+    public static bool Item = false; //ã‚¢ã‚¤ãƒ†ãƒ å–å¾—ãƒ•ãƒ©ã‚°
     public static bool But_Item = false;
     public static bool Spot_light = false;
 
     void Start()
     {
-        //ƒXƒ|ƒbƒgƒ‰ƒCƒg‚ÌƒRƒ“ƒ|[ƒlƒ“ƒgæ“¾
+        //ã‚¹ãƒãƒƒãƒˆãƒ©ã‚¤ãƒˆã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå–å¾—
         SpotAngle = lightObject.GetComponent<Light>().spotAngle;
-        SpotAngle = 60.0f;  //‰Šú‚Ì‘å‚«‚³
+        SpotAngle = 80.0f;  //åˆæœŸã®å¤§ãã•
         time = 0f;
         Item = false;
         But_Item = false;
@@ -27,24 +27,24 @@ public class Test_GameManger : MonoBehaviour
 
     void Update()
     {
-        //ƒ‰ƒCƒg‚Ì‘å‚«‚³”½‰f
+        //ãƒ©ã‚¤ãƒˆã®å¤§ãã•åæ˜ 
         lightObject.GetComponent<Light>().spotAngle = SpotAngle;
 
         time += Time.deltaTime;
 
-        //3•bŒo‚Â‚©AƒQ[ƒ€ƒI[ƒo[‚Å‚Í–³‚©‚Á‚½‚ç
-        if (time >= 3f && !GameOver)
+        //3ç§’çµŒã¤ã‹ã€ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã§ã¯ç„¡ã‹ã£ãŸã‚‰
+        if (time >= 2f && !GameOver)
         {
-            //ƒ‰ƒCƒg‚ğ¬‚³‚­‚·‚é
+            //ãƒ©ã‚¤ãƒˆã‚’å°ã•ãã™ã‚‹
             SpotAngle -= 1f;
             time = 0f;
         }
 
-        //ƒAƒCƒeƒ€‚ğæ‚Á‚½‚ç
+        //ã‚¢ã‚¤ãƒ†ãƒ ã‚’å–ã£ãŸã‚‰
         if (Item)
         {
-            //ƒ‰ƒCƒg‚Ì‘å‚«‚³‚ğ‰Šú‚É–ß‚·
-            SpotAngle = 60.0f;
+            //ãƒ©ã‚¤ãƒˆã®å¤§ãã•ã‚’åˆæœŸã«æˆ»ã™
+            SpotAngle = 80.0f;
             Item = false;
         }
         if (But_Item)
@@ -53,24 +53,24 @@ public class Test_GameManger : MonoBehaviour
             But_Item = false;
         }
 
-        //ƒ‰ƒCƒg‚Ì‘å‚«‚³‚ª20ˆÈ‰º‚¾‚Á‚½‚ç
+        //ãƒ©ã‚¤ãƒˆã®å¤§ãã•ãŒ20ä»¥ä¸‹ã ã£ãŸã‚‰
         if (SpotAngle < 20f)
         {
-            //“_–Å‚·‚é
+            //ç‚¹æ»…ã™ã‚‹
             Spot_light = true;
         }
-        //ƒ‰ƒCƒg‚Ì‘å‚«‚³‚ª5ˆÈ‰º‚¾‚Á‚½‚ç
+        //ãƒ©ã‚¤ãƒˆã®å¤§ãã•ãŒ5ä»¥ä¸‹ã ã£ãŸã‚‰
         if (SpotAngle <= 5f)
         {
-            //ƒQ[ƒ€ƒI[ƒo[‚É‚·‚é
+            //ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã«ã™ã‚‹
             GameOver = true;
-            Debug.Log("I‚í‚è");
+            Debug.Log("çµ‚ã‚ã‚Š");
         }
 
-        //L‚ğ‰Ÿ‚µ‚½‚ç
+        //Lã‚’æŠ¼ã—ãŸã‚‰
         if (Input.GetKey(KeyCode.L))
         {
-            //ƒ‰ƒCƒg‚Ì‘å‚«‚³‚ğ20‚É‚·‚é
+            //ãƒ©ã‚¤ãƒˆã®å¤§ãã•ã‚’20ã«ã™ã‚‹
             SpotAngle = 20.0f;
         }
     }
