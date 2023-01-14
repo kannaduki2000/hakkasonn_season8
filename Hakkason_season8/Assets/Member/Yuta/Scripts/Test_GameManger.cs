@@ -36,7 +36,7 @@ public class Test_GameManger : MonoBehaviour
         if (time >= 2f && !GameOver)
         {
             //ライトを小さくする
-            SpotAngle -= 1f;
+            SpotAngle -= 2f;
             time = 0f;
         }
 
@@ -49,7 +49,7 @@ public class Test_GameManger : MonoBehaviour
         }
         if (But_Item)
         {
-            SpotAngle -= 5.0f;
+            SpotAngle -= 10.0f;
             But_Item = false;
         }
 
