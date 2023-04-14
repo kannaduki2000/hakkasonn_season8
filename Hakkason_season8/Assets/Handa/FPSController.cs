@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FPSController : MonoBehaviour
 {
     float x, z;
-    float speed = 0.1f;
+    public float speed = 0.1f;
 
     public GameObject cam;
     Quaternion cameraRot, characterRot;
-    float Xsensityvity = 3f, Ysensityvity = 3f;
+    float Xsensityvity = 0f, Ysensityvity = 2f;
 
     bool cursorLock = true;
 
@@ -109,6 +110,11 @@ public class FPSController : MonoBehaviour
         {
             Test_GameManger.But_Item = true;
             Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.tag == "Goal")
+        {
+            SceneManager.LoadScene("Goal");
         }
     }
 }

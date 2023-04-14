@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Test_GameManger : MonoBehaviour
 {
@@ -54,17 +55,18 @@ public class Test_GameManger : MonoBehaviour
         }
 
         //ライトの大きさが20以下だったら
-        if (SpotAngle < 20f)
+        if (SpotAngle < 40f)
         {
             //点滅する
             Spot_light = true;
         }
         //ライトの大きさが5以下だったら
-        if (SpotAngle <= 5f)
+        if (SpotAngle <= 30f)
         {
             //ゲームオーバーにする
             GameOver = true;
             Debug.Log("終わり");
+            SceneManager.LoadScene("Over");
         }
 
         //Lを押したら
@@ -72,6 +74,14 @@ public class Test_GameManger : MonoBehaviour
         {
             //ライトの大きさを20にする
             SpotAngle = 20.0f;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+
         }
     }
 }

@@ -6287,11 +6287,11 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.6400936, g: 0.6792453, b: 0.29842854, a: 1}
+  m_Color: {r: 0.6981132, g: 0.6120761, b: 0.29354623, a: 1}
   m_Intensity: 1
   m_Range: 7
   m_SpotAngle: 80
-  m_InnerSpotAngle: 8
+  m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -8977,8 +8977,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4080145, y: 2.2950897, z: 0.29553434}
-  m_Center: {x: 0, y: 1.1481464, z: 0.028115734}
+  m_Size: {x: 1.4080145, y: 2.2950897, z: 1.2971784}
+  m_Center: {x: 0, y: 1.1481464, z: 0.52893776}
 --- !u!1001 &683086072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13754,6 +13754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27976ca1044c9444290fb883817595d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.05
   cam: {fileID: 1941084101}
 --- !u!1 &1060536669 stripped
 GameObject:
@@ -17005,16 +17006,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4435076048014054080, guid: 0fa07e5713f22ef42a48cfa5fdb3c395, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435076048014054080, guid: 0fa07e5713f22ef42a48cfa5fdb3c395, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4435076048014054080, guid: 0fa07e5713f22ef42a48cfa5fdb3c395, type: 3}
       propertyPath: m_AngularDrag
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4435076048014054080, guid: 0fa07e5713f22ef42a48cfa5fdb3c395, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435076048014054080, guid: 0fa07e5713f22ef42a48cfa5fdb3c395, type: 3}
       propertyPath: m_Interpolate
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4435076048014054081, guid: 0fa07e5713f22ef42a48cfa5fdb3c395, type: 3}
       propertyPath: m_Size.x
@@ -20597,6 +20606,10 @@ PrefabInstance:
     - target: {fileID: 416386656469751746, guid: 9175d08a6bdddeb48afa15d1b714d918, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 416386656469751746, guid: 9175d08a6bdddeb48afa15d1b714d918, type: 3}
+      propertyPath: m_TagString
+      value: Goal
       objectReference: {fileID: 0}
     - target: {fileID: 5826582559400492653, guid: 9175d08a6bdddeb48afa15d1b714d918, type: 3}
       propertyPath: m_RootOrder
